@@ -7,24 +7,26 @@
 extents = Vector2( 31.7094, 30.963 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 35.1102, 35.9954 )
+extents = Vector2( 33.2882, 33.6764 )
 
-[node name="Enemy" type="Node2D" groups=[
+[node name="Enemy" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 2 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-
-[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+[node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.545098, 0.113725, 0.113725, 1 )
+scale = Vector2( 1, 1 )
 texture = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Other_Enemy_Detector" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

@@ -5,13 +5,12 @@
 
 [node name="World" type="Node2D"]
 
-[node name="Player" parent="." groups=[
-"Player",
-] instance=ExtResource( 1 )]
+[node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 373.784, 313.76 )
 scale = Vector2( 0.6, 0.6 )
 
-[node name="Enemy" parent="." groups=[
-"Enemy",
-] instance=ExtResource( 2 )]
-position = Vector2( 613.307, 241.708 )
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 993.23, 37.0815 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 75.3815, 531.776 )
